@@ -46,6 +46,11 @@ module.exports = function (injectedStore) {
     return like
   }
 
+  async function postsLiked(user) {
+		const users = await Store.query(COLLECTION + '_like', { user: user }, {post: post});
+		return users;
+  }
+  
   async function postLikers(post) {
     const users = await store.query(COLLECTION + 'like', { post: post }, {post: post})
     return users
