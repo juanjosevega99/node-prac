@@ -15,7 +15,7 @@ module.exports = function (injectedStore) {
       .then(equals => {
         if (equals === true) {
           // GENERATION TOKEN
-          return auth.sign(data)
+          return auth.sign({...data})
         } else {
           throw new Error('Invalid information')
         }
