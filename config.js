@@ -1,4 +1,5 @@
 module.exports = {
+  remoteDB: process.env.REMOTE_DB || false,
   api: {
     port: process.env.API_PORT || 3000
   },
@@ -9,7 +10,7 @@ module.exports = {
     secret: process.env.JWT_SECRET || 'notasecret!'
   },
   mysql: {
-    host: process.env.MYSQL_HOST || 'remotemysql.com',
+    host: process.env.MYSQL_HOST || '',
     user: process.env.MYSQL_USER || 'qrOVxOHUnR',
     password: process.env.MYSQL_PASS || 'gyDB72ePym',
     database: process.env.MYSQL_DB || 'qrOVxOHUnR',
